@@ -1,0 +1,91 @@
+\doxysection{Visitor\+Counter Class Reference}
+\hypertarget{class_visitor_counter}{}\label{class_visitor_counter}\index{VisitorCounter@{VisitorCounter}}
+
+
+Class to count visitors and find the time period with the most number of visitors.  
+
+
+
+
+{\ttfamily \#include $<$Visitor\+Counter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_visitor_counter_a6ae1962da088d389337d5e10d67ed72a}{Visitor\+Counter}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_visitor_counter}{Visitor\+Counter} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_visitor_counter_a45836b3aee3878133f9958650a2a05b1}{add\+Visitor}} (const std\+::string \&enter\+Time\+Str, const std\+::string \&leave\+Time\+Str)
+\begin{DoxyCompactList}\small\item\em Adds a visitor to the count. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::pair$<$ std\+::string, std\+::string $>$, int $>$ \mbox{\hyperlink{class_visitor_counter_a23d7cbe62998c5d9c37d71e655d880f0}{find\+Max\+Visitor\+Period}} () const
+\begin{DoxyCompactList}\small\item\em Finds the time period with the most number of visitors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to count visitors and find the time period with the most number of visitors. 
+
+Definition at line \mbox{\hyperlink{_visitor_counter_8h_source_l00012}{12}} of file \mbox{\hyperlink{_visitor_counter_8h_source}{Visitor\+Counter.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_visitor_counter_a6ae1962da088d389337d5e10d67ed72a}\label{class_visitor_counter_a6ae1962da088d389337d5e10d67ed72a} 
+\index{VisitorCounter@{VisitorCounter}!VisitorCounter@{VisitorCounter}}
+\index{VisitorCounter@{VisitorCounter}!VisitorCounter@{VisitorCounter}}
+\doxysubsubsection{\texorpdfstring{VisitorCounter()}{VisitorCounter()}}
+{\footnotesize\ttfamily Visitor\+Counter\+::\+Visitor\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_visitor_counter}{Visitor\+Counter} object. 
+
+
+
+Definition at line \mbox{\hyperlink{_visitor_count_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_visitor_count_8cpp_source}{Visitor\+Count.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_visitor_counter_a45836b3aee3878133f9958650a2a05b1}\label{class_visitor_counter_a45836b3aee3878133f9958650a2a05b1} 
+\index{VisitorCounter@{VisitorCounter}!addVisitor@{addVisitor}}
+\index{addVisitor@{addVisitor}!VisitorCounter@{VisitorCounter}}
+\doxysubsubsection{\texorpdfstring{addVisitor()}{addVisitor()}}
+{\footnotesize\ttfamily void Visitor\+Counter\+::add\+Visitor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{enter\+Time\+Str,  }\item[{const std\+::string \&}]{leave\+Time\+Str }\end{DoxyParamCaption})}
+
+
+
+Adds a visitor to the count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enter\+Time\+Str} & The entering time of the visitor in "{}hh\+:mm"{} format. \\
+\hline
+{\em leave\+Time\+Str} & The leaving time of the visitor in "{}hh\+:mm"{} format. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_visitor_count_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_visitor_count_8cpp_source}{Visitor\+Count.\+cpp}}.
+
+\Hypertarget{class_visitor_counter_a23d7cbe62998c5d9c37d71e655d880f0}\label{class_visitor_counter_a23d7cbe62998c5d9c37d71e655d880f0} 
+\index{VisitorCounter@{VisitorCounter}!findMaxVisitorPeriod@{findMaxVisitorPeriod}}
+\index{findMaxVisitorPeriod@{findMaxVisitorPeriod}!VisitorCounter@{VisitorCounter}}
+\doxysubsubsection{\texorpdfstring{findMaxVisitorPeriod()}{findMaxVisitorPeriod()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::pair$<$ std\+::string, std\+::string $>$, int $>$ Visitor\+Counter\+::find\+Max\+Visitor\+Period (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Finds the time period with the most number of visitors. 
+
+\begin{DoxyReturn}{Returns}
+A pair representing the time period with the most visitors (start time, end time and visitor count). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_visitor_count_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_visitor_count_8cpp_source}{Visitor\+Count.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Rushiraj Heshi/\+Visitors\+Counter/src/\mbox{\hyperlink{_visitor_counter_8h}{Visitor\+Counter.\+h}}\item 
+C\+:/\+Users/\+Rushiraj Heshi/\+Visitors\+Counter/src/\mbox{\hyperlink{_visitor_count_8cpp}{Visitor\+Count.\+cpp}}\end{DoxyCompactItemize}

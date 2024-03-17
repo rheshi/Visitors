@@ -1,0 +1,46 @@
+\doxysection{Visitor\+Count.\+cpp}
+\hypertarget{_visitor_count_8cpp_source}{}\label{_visitor_count_8cpp_source}\index{C:/Users/Rushiraj Heshi/VisitorsCounter/src/VisitorCount.cpp@{C:/Users/Rushiraj Heshi/VisitorsCounter/src/VisitorCount.cpp}}
+\mbox{\hyperlink{_visitor_count_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_visitor_counter_8h}{VisitorCounter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00003}\mbox{\hyperlink{class_visitor_counter_a6ae1962da088d389337d5e10d67ed72a}{00003}}\ \mbox{\hyperlink{class_visitor_counter_a6ae1962da088d389337d5e10d67ed72a}{VisitorCounter::VisitorCounter}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00005}\mbox{\hyperlink{class_visitor_counter_a45836b3aee3878133f9958650a2a05b1}{00005}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_visitor_counter_a45836b3aee3878133f9958650a2a05b1}{VisitorCounter::addVisitor}}(\textcolor{keyword}{const}\ std::string\&\ enterTimeStr,\ \textcolor{keyword}{const}\ std::string\&\ leaveTimeStr)\ \{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{class_visitor}{Visitor}}\ visitor(enterTimeStr,\ leaveTimeStr);}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00007}00007\ \ \ \ \ visitors.push\_back(visitor);}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00008}00008\ \ \ \ \ updateVisitorCounts(visitor);}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00011}00011\ \textcolor{keywordtype}{void}\ VisitorCounter::updateVisitorCounts(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_visitor}{Visitor}}\&\ visitor)\ \{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ hour\ =\ visitor.\mbox{\hyperlink{class_visitor_ac88a98a3f98d2a62a65f361d4554bc13}{getEnterTime}}().\mbox{\hyperlink{struct_time_a497d35aa44ea40706dbab08f7a31d069}{hour}};\ hour\ <=\ visitor.\mbox{\hyperlink{class_visitor_a459d8b71ce90b40c79be153f6b9cfa07}{getLeaveTime}}().\mbox{\hyperlink{struct_time_a497d35aa44ea40706dbab08f7a31d069}{hour}};\ ++hour)\ \{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ minute\ =\ 0;\ minute\ <\ 60;\ ++minute)\ \{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((hour\ >\ visitor.\mbox{\hyperlink{class_visitor_ac88a98a3f98d2a62a65f361d4554bc13}{getEnterTime}}().\mbox{\hyperlink{struct_time_a497d35aa44ea40706dbab08f7a31d069}{hour}}\ ||\ (hour\ ==\ visitor.\mbox{\hyperlink{class_visitor_ac88a98a3f98d2a62a65f361d4554bc13}{getEnterTime}}().\mbox{\hyperlink{struct_time_a497d35aa44ea40706dbab08f7a31d069}{hour}}\ \&\&\ minute\ >=\ visitor.\mbox{\hyperlink{class_visitor_ac88a98a3f98d2a62a65f361d4554bc13}{getEnterTime}}().\mbox{\hyperlink{struct_time_a6c2e13147da34803a9784aa2b8bf8da8}{minute}}))\ \&\&}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (hour\ <\ visitor.\mbox{\hyperlink{class_visitor_a459d8b71ce90b40c79be153f6b9cfa07}{getLeaveTime}}().\mbox{\hyperlink{struct_time_a497d35aa44ea40706dbab08f7a31d069}{hour}}\ ||\ (hour\ ==\ visitor.\mbox{\hyperlink{class_visitor_a459d8b71ce90b40c79be153f6b9cfa07}{getLeaveTime}}().\mbox{\hyperlink{struct_time_a497d35aa44ea40706dbab08f7a31d069}{hour}}\ \&\&\ minute\ <=\ visitor.\mbox{\hyperlink{class_visitor_a459d8b71ce90b40c79be153f6b9cfa07}{getLeaveTime}}().\mbox{\hyperlink{struct_time_a6c2e13147da34803a9784aa2b8bf8da8}{minute}})))\ \{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ timeStr\ =\ std::to\_string(hour)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ (minute\ <\ 10\ ?\ \textcolor{stringliteral}{"{}0"{}}\ :\ \textcolor{stringliteral}{"{}"{}})\ +\ std::to\_string(minute);}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visitorCounts[timeStr]++;}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00023}\mbox{\hyperlink{class_visitor_counter_a23d7cbe62998c5d9c37d71e655d880f0}{00023}}\ std::pair<std::pair<std::string,\ std::string>,\ \textcolor{keywordtype}{int}>\ \mbox{\hyperlink{class_visitor_counter_a23d7cbe62998c5d9c37d71e655d880f0}{VisitorCounter::findMaxVisitorPeriod}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{int}\ maxVisitors\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00025}00025\ \ \ \ \ std::string\ startTime,\ endTime;}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ visitorCounts.begin();\ it\ !=\ visitorCounts.end();\ ++it)\ \{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>second\ >\ maxVisitors)\ \{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ maxVisitors\ =\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ startTime\ =\ it-\/>first;}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ endTime\ =\ it-\/>first;}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (it-\/>second\ ==\ maxVisitors)\ \{}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ endTime\ =\ it-\/>first;}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ std::make\_pair(std::make\_pair(startTime,\ endTime),\ maxVisitors);}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_visitor_count_8cpp_source_l00040}00040\ \}}
+
+\end{DoxyCode}
